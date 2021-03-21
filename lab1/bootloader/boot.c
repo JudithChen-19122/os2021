@@ -3,7 +3,10 @@
 #define SECTSIZE 512
 
 void bootMain(void) {
-	
+	void (*elf)(void);
+	elf = (void(*)(void))0x8c00;
+	readSect((void*)elf, 1);
+	elf(); //jmp to 0x8c00  
 }
 
 void waitDisk(void) { // waiting for disk
