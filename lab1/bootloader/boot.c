@@ -5,7 +5,8 @@
 void bootMain(void) {
 	void (*elf)(void);
 	elf = (void(*)(void))0x8c00;
-	readSect((void*)elf, 1);
+        for(int i=0;i<200;i++)
+	     readSect((void*)(elf+i*SECTSIZE), i+1);
 	elf(); //jmp to 0x8c00  
 }
 
