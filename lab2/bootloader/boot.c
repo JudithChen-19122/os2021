@@ -28,6 +28,10 @@ void bootMain(void) {
 	}
 
 	// TODO: 填写kMainEntry、phoff、offset
+        kMainEntry = (void(*)(void))((ELFHeader *)elf)->entry;
+        phoff = ((ELFHeader *)elf)->phoff;
+        offset=((ProgramHeader *)(elf + phoff))->off;      
+
 
 	for (i = 0; i < 200 * 512; i++) {
 		*(unsigned char *)(elf + i) = *(unsigned char *)(elf + i + offset);
