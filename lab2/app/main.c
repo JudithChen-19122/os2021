@@ -37,8 +37,7 @@ int uEntry(void) {
 	getStr(name,20);
 	printf("%s is stronger than Alice\n",name);
 	printf("=======================================================\n");
-	printf("Test end!!! Good luck!!!\n");
-	
+	printf("Test end!!! Good luck!!!\n");	
 	while(1);
 	return 0;
 }
